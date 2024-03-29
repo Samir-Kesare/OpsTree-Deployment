@@ -134,7 +134,7 @@ Rolling out immutable infrastructure using a rolling deployment strategy offers 
 
 | Description                                   | References  |
 | --------------------------------------------  | -------------------------------------------------|
-| Rollout Immutable Infrastructure using Rolling Startegy | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/Rollout/rollingStrategy/README.md |
-| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling |
-| Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
-| How to Rollout | https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a |
+| Rollout Immutable Infrastructure using Rolling Startegy | [Reference link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/Rollout/rollingStrategy/README.md) |
+| Deployment Strategies Reference doc | [Reference link](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling) |
+| Immutable Infrastructure Reference doc | [Reference link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md) |
+| How to Rollout | [Reference link](https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a) |
