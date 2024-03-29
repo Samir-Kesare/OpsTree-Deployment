@@ -9,7 +9,7 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Steps to deploy](#steps-to-deploy-rolling-strategy)
++ [Steps to Deploy](#steps-to-deploy-rolling-strategy)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
 + [Conclusion](#Conclusion)
