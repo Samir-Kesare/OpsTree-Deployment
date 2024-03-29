@@ -9,9 +9,10 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
++ [Instance Refresh](#Instance-Refresh)
++ [Pre-requisites](#Pre-requisites)
++ [How it Works?](#How-it-Works)
 + [Steps to Deploy](#steps-to-deploy-rolling-strategy)
-+ [Advantages](#Advantages)
-+ [Disadvantages](#Disadvantages)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
 + [References](#References)
