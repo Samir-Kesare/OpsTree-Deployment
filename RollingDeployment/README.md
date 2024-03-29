@@ -1,4 +1,4 @@
-# Rollout Immutable Infrastructure using Rolling Startegy
+# Rolling Startegy Deployment in Immutable Infrastructure 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/de21aea5-4b4c-4416-b18c-0a68788cfcce)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
@@ -41,6 +41,22 @@ In a rolling deployment:
 
 To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling)
 ***
+
+## Instance Refresh 
+You can use an instance refresh to update the instances in your Auto Scaling group. This feature can be useful when a configuration change requires you to replace instances, especially if your Auto Scaling group contains a large number of instances.
+
+When the instance refresh has started, Amazon EC2 Auto Scaling will:
+
+- Replace instances in batches based on the minimum and maximum healthy percentages.
+- Launch the new instances first before terminating the old ones if the minimum healthy percentage is set to 100 percent. This ensures that your desired capacity is maintained at all times.
+- Check instances for health status and give them time to warm up before more instances are replaced.
+- Terminate and replace instances that are found to be unhealthy.
+- Automatically update the Auto Scaling group settings with the new configuration changes after the instance refresh succeeds.
+- The following flow diagram illustrates the launch before terminate behavior when you set the minimum healthy percentage to 100 percent.
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/1e247890-ade7-4d8b-8536-9504070b26fc)
+***
+
 ## Pre-requisites
 | Service    | Description |
 | ---------- | ----------- |
