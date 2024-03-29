@@ -46,7 +46,7 @@ To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps
 | ---------- | ----------- |
 | AWS user   | an aws user with required permissions |
 | Enviroment | existing enviroment where deployment needs to be performed |
-**
+***
 
 ## How it Works?
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8f9a29c6-0ef5-4b9c-b485-5ba6efc4a015)
