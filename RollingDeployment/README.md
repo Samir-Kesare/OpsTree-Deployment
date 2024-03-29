@@ -66,7 +66,7 @@ The following flow diagram illustrates the launch before terminate behavior when
 ***
 
 ## How it Works?
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8f9a29c6-0ef5-4b9c-b485-5ba6efc4a015)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/07c83ab3-77a3-4a4d-87a0-d175c93745bc)
 ***
 
 ## Steps to Deploy (Rolling Strategy)
@@ -131,8 +131,9 @@ Rolling out immutable infrastructure using a rolling deployment strategy offers 
 
 ## References
 
-| Description                                   | References  
+| Description                                   | References  |
 | --------------------------------------------  | -------------------------------------------------|
+| Rollout Immutable Infrastructure using Rolling Startegy | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/Rollout/rollingStrategy/README.md |
 | Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling |
 | Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
 | How to Rollout | https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a |
