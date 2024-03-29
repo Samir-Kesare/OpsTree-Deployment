@@ -43,16 +43,17 @@ To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps
 ***
 
 ## Instance Refresh 
-You can use an instance refresh to update the instances in your Auto Scaling group. This feature can be useful when a configuration change requires you to replace instances, especially if your Auto Scaling group contains a large number of instances.
+We will use instance refresh to update the instances in your Auto Scaling group. This feature can be useful when a configuration change requires to replace instances, especially if Auto Scaling group contains a large number of instances.
 
 When the instance refresh has started, Amazon EC2 Auto Scaling will:
 
 - Replace instances in batches based on the minimum and maximum healthy percentages.
-- Launch the new instances first before terminating the old ones if the minimum healthy percentage is set to 100 percent. This ensures that your desired capacity is maintained at all times.
+- Launch the new instances first before terminating the old ones if the minimum healthy percentage is set to 100 percent. This ensures that desired capacity is maintained at all times.
 - Check instances for health status and give them time to warm up before more instances are replaced.
 - Terminate and replace instances that are found to be unhealthy.
 - Automatically update the Auto Scaling group settings with the new configuration changes after the instance refresh succeeds.
-- The following flow diagram illustrates the launch before terminate behavior when you set the minimum healthy percentage to 100 percent.
+
+The following flow diagram illustrates the launch before terminate behavior when you set the minimum healthy percentage to 100 percent.
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/1e247890-ade7-4d8b-8536-9504070b26fc)
 ***
@@ -79,73 +80,35 @@ Create and test a new AMI images with new version of application.
 Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
 
 ## Step 3: Go to ASG(here it is Frontend-ASG) and Start Instance Refresh 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/4d7e1fa5-00c5-49ab-8d0c-c6da488e14b8)
 
 ## Step 4: For Availability settings, do the following:
 
-i. Choose one of the following instance replacement methods:
+A. Choose one of the following instance replacement methods:
 
   1. **Launch before terminating:** A new instance must be provisioned first before an existing instance can be terminated. This is a good choice for applications that favor availability over cost savings.
   2. **Terminate and launch:** New instances are provisioned at the same time your existing instances are terminated. This is a good choice for applications that favor cost savings over availability. It's also a good choice for applications that should not launch more capacity than is currently available.
   3. **Custom behavior:** This option lets you set up a custom minimum and maximum range for the amount of capacity that you want available when replacing instances. This can help you achieve the right balance between cost and availability.
 
-ii. For Set healthy percentage, enter values for one or both of the following fields. The enable fields vary depending on the option you choose for Instance replacement method.
+B. For **Set healthy percentage**, enter values for one or both of the following fields. The enable fields vary depending on the option you choose for **Instance replacement method**.
 
   1. **Min:** Sets the minimum healthy percentage that's required to proceed with the instance refresh.
   2. **Max:** Sets the maximum healthy percentage that's possible during the instance refresh. 
-## Step 5: Configure Instance Refresh
 
-Set up a blue-green deployment environment where you have two identical production environments: one currently serving traffic (blue), and the other ready to receive updates (green).
+c. For **Instance warmup**, enter the number of seconds from when a new instance's state changes to `InService` to when it finishes initializing. Amazon EC2 Auto Scaling waits this amount of time before moving on to replace the next instance.
 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/8ecdaa43-a258-406c-8be6-d6d7c14f9417)
 
+## Step 5: Desired configuration
+Expand the **Desired configuration** section to specify updates that you want to make to your Auto Scaling group.
 
-**Step 6: Gradual Rollout**
+- For **Update launch template**:
+If you created a new launch template or a new launch template version, select this check box. When you select this option, Amazon EC2 Auto Scaling shows you the current launch template and current launch template version. It also lists any other available versions. Choose the launch template and then choose the version.
 
-Start by deploying the new immutable images to the green environment. This could be done gradually, for example, by rolling out updates to a small subset of servers or instances first to ensure everything is working as expected.
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ce70956d-1a99-4904-8959-cd7190cf040d)
 
-**Step 7: Health Checks and Monitoring**
-
-Implement health checks and monitoring to ensure that the new green environment is functioning correctly. This could include automated tests, system health checks, and performance monitoring.
-
-**Step 8: Traffic Shifting**
-
-Once you're confident that the green environment is stable and performing well, gradually shift traffic from the blue environment to the green environment. This could be done using load balancer settings or DNS changes.
-
-**Step 9: Rollback Plan**
-
-Have a rollback plan in place in case any issues arise during the deployment. This could involve automatically shifting traffic back to the blue environment or rolling back to a previous version of the immutable images.
-
-**Step 9: Post-Deployment Verification**
-
-After the deployment is complete, perform thorough post-deployment verification to ensure that everything is working as expected in the green environment.
-
-**Step 10: Cleanup**
-
-Once the deployment is successful and you're confident in the new green environment, clean up any resources associated with the blue environment to avoid unnecessary costs and complexity.
-***
-
-## Advantages
-
-| Advantage                  | Description                                                                                                                                                      |
-|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Continuous Availability    | Rolling deployments ensure that your application remains available throughout the deployment process, minimizing downtime and maintaining service continuity.   |
-| Risk Mitigation            | Reduces the risk of deploying faulty updates by gradually updating a subset of instances, allowing for the detection and resolution of issues before affecting the entire infrastructure. |
-| Incremental Updates        | Enables the deployment of updates incrementally, facilitating the management of large-scale deployments and reducing the impact on system resources.              |
-| Easier Rollbacks           | Facilitates quick rollbacks to previous versions in case of issues, as changes are applied gradually, allowing for the identification and resolution of problems without disrupting the entire system. |
-| Scalability                | Provides scalability by allowing the rate of updates to be adjusted based on demand, ensuring that the infrastructure can handle changes without sacrificing performance or stability. |
-| Consistency                | Helps maintain consistency across the infrastructure by updating instances in a phased manner, ensuring that all instances run the same version of the application and reducing the risk of compatibility issues. |
-***
-
-## Disadvantages
-Here's the information presented in a table format:
-
-| Disadvantage              | Description |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Increased Complexity     | Implementing rolling deployments requires careful orchestration and coordination, adding complexity to the deployment process. |
-| Resource Intensive        | Rolling deployments may require additional resources such as extra server capacity or automation tools, increasing operational costs and resource consumption. |
-| Extended Deployment Time | Rolling deployments may take longer to complete compared to other deployment strategies due to incremental updates applied to a subset of servers. |
-| Potential Service Degradation | There is a risk of service degradation if updated code introduces unexpected bugs or performance issues, impacting a subset of users or transactions. |
-| Version Drift            | Managing version consistency across a large number of servers can be challenging, leading to version drift and potential compatibility issues. |
-| Dependency Management    | Handling dependencies between different components of the application stack can be complex and may require additional testing and validation. |
+## Step 6: Review all of your selections to confirm that everything is set up correctly.
+When you are satisfied with your instance refresh selections, choose **Start instance refresh.**
 ***
 
 ## Conclusion
