@@ -71,15 +71,18 @@ The following flow diagram illustrates the launch before terminate behavior when
 
 ## Steps to Deploy (Rolling Strategy)
 
-Rolling out immutable infrastructure using a rolling deployment strategy involves deploying updates or changes to your infrastructure in a phased manner while maintaining high availability and minimizing downtime. Here's a general outline of how you could approach it:
-
 ### Step 1: Build a new AMI 
 Create and test a new AMI images with new version of application.
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/6db566eb-6d1b-4fb1-b068-674b4af315f4)
 
 ### Step 2: Update Launch Template
 Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/e633e9d5-1639-41d2-bfe9-6989b4348d84)
+
 ### Step 3: Go to ASG(here it is Frontend-ASG) and Start Instance Refresh 
+
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/4d7e1fa5-00c5-49ab-8d0c-c6da488e14b8)
 
 ### Step 4: For Availability settings, do the following:
@@ -107,8 +110,12 @@ If you created a new launch template or a new launch template version, select th
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ce70956d-1a99-4904-8959-cd7190cf040d)
 
-### Step 6: Review all of your selections to confirm that everything is set up correctly.
+### Step 6: Start instance refresh
+Review all of your selections to confirm that everything is set up correctly.
 When you are satisfied with your instance refresh selections, choose **Start instance refresh.**
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/c04a1060-f63e-4607-8968-36f2f35c66ba)
+
 ***
 
 ## Conclusion
