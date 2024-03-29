@@ -13,6 +13,7 @@
 + [Pre-requisites](#Pre-requisites)
 + [How it Works?](#How-it-Works)
 + [Steps to Deploy](#steps-to-deploy-rolling-strategy)
++ [Result](#result)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
 + [References](#References)
@@ -118,7 +119,17 @@ When you are satisfied with your instance refresh selections, choose **Start ins
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/c04a1060-f63e-4607-8968-36f2f35c66ba)
 
 ***
+## Result
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/63083e7c-09d7-40c4-8a9e-87ad3cc2e790)
 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/0029db10-c5df-4335-b881-cd17318b3f4d)
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/2feba7a4-9093-4416-96e7-830fc8a896db)
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/3f00c546-8109-4ad0-a3f6-b50f2e460d07)
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/73370356-c20d-45bd-a40a-30400e53e420)
+***
 ## Conclusion
 Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
 ***
