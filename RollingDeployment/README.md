@@ -44,47 +44,57 @@ To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps
 ## Pre-requisites
 | Service    | Description |
 | ---------- | ----------- |
-| AWS user   | an aws user with required permissions |
-| Enviroment | existing enviroment where deployment needs to be performed |
+| AWS User   | an aws user with required permissions |
+| AWS Enviroment | existing AWS Enviroment where deployment needs to be performed |
 ***
 
 ## How it Works?
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8f9a29c6-0ef5-4b9c-b485-5ba6efc4a015)
-**
+***
 
 ## Steps to Deploy (Rolling Strategy)
 
 Rolling out immutable infrastructure using a rolling deployment strategy involves deploying updates or changes to your infrastructure in a phased manner while maintaining high availability and minimizing downtime. Here's a general outline of how you could approach it:
 
-**Step 1: Version Control**
+## Step 1: Build a new AMI 
+Create and test a new AMI images with new version of application.
 
-Ensure that your infrastructure configurations are version controlled, preferably using a tool like Git. This allows you to track changes and roll back if necessary.
+## Step 2: Update Launch Template
+Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
 
-**Step 2: Immutable Infrastructure Definition**
+## Step 3: Go to ASG(here it is Frontend-ASG) and Start Instance Refresh 
 
-Define your infrastructure as code using tools like Terraform, AWS CloudFormation, or similar. This ensures that your infrastructure is consistent, repeatable, and versioned.
+## Step 4: For Availability settings, do the following:
 
-**Step 3: Build and Test Immutable Images**
+i. Choose one of the following instance replacement methods:
 
-Create immutable images or machine images (AMIs, VM images, Docker containers, etc.) that represent your desired infrastructure state. Automate the build and testing of these images to ensure they are reliable and ready for deployment.
+  1. **Launch before terminating:** A new instance must be provisioned first before an existing instance can be terminated. This is a good choice for applications that favor availability over cost savings.
+  2. **Terminate and launch:** New instances are provisioned at the same time your existing instances are terminated. This is a good choice for applications that favor cost savings over availability. It's also a good choice for applications that should not launch more capacity than is currently available.
+  3. **Custom behavior:** This option lets you set up a custom minimum and maximum range for the amount of capacity that you want available when replacing instances. This can help you achieve the right balance between cost and availability.
 
-**Step 4: Blue-Green Deployment Environment**
+ii. For Set healthy percentage, enter values for one or both of the following fields. The enable fields vary depending on the option you choose for Instance replacement method.
+
+  1. **Min:** Sets the minimum healthy percentage that's required to proceed with the instance refresh.
+  2. **Max:** Sets the maximum healthy percentage that's possible during the instance refresh. 
+## Step 5: Configure Instance Refresh
 
 Set up a blue-green deployment environment where you have two identical production environments: one currently serving traffic (blue), and the other ready to receive updates (green).
 
-**Step 5: Gradual Rollout**
+
+
+**Step 6: Gradual Rollout**
 
 Start by deploying the new immutable images to the green environment. This could be done gradually, for example, by rolling out updates to a small subset of servers or instances first to ensure everything is working as expected.
 
-**Step 6: Health Checks and Monitoring**
+**Step 7: Health Checks and Monitoring**
 
 Implement health checks and monitoring to ensure that the new green environment is functioning correctly. This could include automated tests, system health checks, and performance monitoring.
 
-**Step 7: Traffic Shifting**
+**Step 8: Traffic Shifting**
 
 Once you're confident that the green environment is stable and performing well, gradually shift traffic from the blue environment to the green environment. This could be done using load balancer settings or DNS changes.
 
-**Step 8: Rollback Plan**
+**Step 9: Rollback Plan**
 
 Have a rollback plan in place in case any issues arise during the deployment. This could involve automatically shifting traffic back to the blue environment or rolling back to a previous version of the immutable images.
 
