@@ -68,7 +68,8 @@ The following flow diagram illustrates the launch before terminate behavior when
 ***
 
 ## How it Works?
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/07c83ab3-77a3-4a4d-87a0-d175c93745bc)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/8279813b-4f6b-4cdd-9eef-7ffe60dee5a6)
+
 ***
 
 ## Steps to Deploy (Rolling Strategy)
