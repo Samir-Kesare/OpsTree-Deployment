@@ -21,9 +21,9 @@ key_name = "openVPN.pem"
 
 server_type = "t2.micro"
 
-server_name = "Standalone-Server"
+server_name = "OpenVPN"
 
-instance_count = 2  
+instance_count = 1  
 
-associate_public_ip = "false"
+associate_public_ip = true
   
