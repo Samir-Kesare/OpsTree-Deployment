@@ -1,10 +1,12 @@
 
 #  Canary  Startegy Deployment in Immutable Infrastructure 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ef9efec4-0688-4803-84b6-676aeb4e69db)
 
-|   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
-| --------------- | --------------| -----------|----------------- | -------------- |
-| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 05 April 2024 |  Version 1 | Harshit Singh     | 05 April 2024  |
+![Canary](https://thenewstack.io/deployment-strategies/)
+
+| **Author** | **Created On** | **Last Updated** | **Document version** |
+| ---------- | -------------- | ---------------- | -------------------- |
+| **Vishal Kumar Kesharwani** | **05 April 2024** | **05 APril 2024** | **v1** |
+
 ***
 
 ## Table of Contents 
@@ -25,21 +27,33 @@
 
 In immutable infrastructure, updates and changes are applied by replacing entire server instances or components with new ones that incorporate the desired changes, rather than modifying existing instances in place.
 
-The **blue-green deployment** strategy is a technique used in software deployment to ensure seamless updates with minimal downtime. It involves maintaining two identical production environments, labeled "blue" and "green," with only one actively serving user traffic at a time. This approach allows for testing and validation of updates in the green environment before routing traffic to it, providing a safety net for quick rollbacks if issues arise. By using this strategy, organizations can achieve continuous deployment while minimizing the risk of disruptions for end-users.
+<img width="360" length="100" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7d9b407e-4c14-4e82-8bb9-84d1b2a96546">
 
-![Blue-Green GIF](https://www.encora.com/hs-fs/hubfs/blue-green-deployment.gif?width=540&name=blue-green-deployment.gif)
+The canary deployment method sends out application updates in an incremental fashion. It starts with a small badge of users and continues the rollout until you reach 100% deployment. This is the least risky deployment strategy as it allows teams to test live updates on small groups of users before pushing them out in larger badges. 
 
-To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
+It’s also more effective because you conduct tests on the live version instead of staged environments. Rollbacks are fast, and there’s no downtime in this case.
+
+
+To know more about  Canary  Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md)
+
 ***
+
 ## Pre-requisites
 | Service    | Description |
 | ---------- | ----------- |
 | AWS User   | an aws user with required permissions |
 | AWS Enviroment | existing AWS Enviroment where deployment needs to be performed |
+
 ***
 
 ## Flow Diagram 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/06b44ea1-029d-475c-b24a-2535ba14d2bd)
+
+Canary deployment involves deploying a new version of an application to a separate environment while directing only a small portion of traffic to it initially. This allows for gradual testing and monitoring of the new version's performance. Various strategies, such as distributing requests evenly or selecting beta testers, can determine which traffic accesses the new version first. Continuous monitoring of metrics helps decide whether to increase traffic or rollback. Once validated, all traffic is routed to the new version, and the old environment can be terminated gracefully. This approach reduces the impact of potential failures and promotes confidence in adopting Continuous Deployment practices.
+
+![Canary](https://www.encora.com/hs-fs/hubfs/GIF-canary-deployment.gif?width=720&name=GIF-canary-deployment.gif)
+
+
+
 ***
 
 ## Steps to Deploy ( Canary  Strategy)
@@ -124,7 +138,7 @@ Here, select the new version TG
 
 ***
 ## Conclusion
-In conclusion, the blue-green deployment strategy offers significant advantages in terms of minimizing downtime, reducing deployment risks, and enabling continuous delivery of updates. However, it's essential to acknowledge the potential challenges such as increased infrastructure costs, complexity in managing dual environments, and dependency on automated deployment tools. Despite these drawbacks, when implemented effectively, blue-green deployments can enhance reliability, flexibility, and agility in the software delivery process. By understanding both the benefits and limitations, organizations can leverage the blue-green strategy to achieve seamless, efficient, and resilient deployment workflows.
+In conclusion, the  Canary  deployment strategy offers significant advantages in terms of minimizing downtime, reducing deployment risks, and enabling continuous delivery of updates. However, it's essential to acknowledge the potential challenges such as increased infrastructure costs, complexity in managing dual environments, and dependency on automated deployment tools. Despite these drawbacks, when implemented effectively,  Canary  deployments can enhance reliability, flexibility, and agility in the software delivery process. By understanding both the benefits and limitations, organizations can leverage the  Canary  strategy to achieve seamless, efficient, and resilient deployment workflows.
 ***
 
 ## Contact Information
