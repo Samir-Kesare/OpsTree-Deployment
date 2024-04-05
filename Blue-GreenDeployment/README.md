@@ -123,6 +123,8 @@ Here, select the new version TG
 ## Result
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/3de48c0e-de56-46cc-b98e-2e7bbbdb66ab)
 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/45879e27-8dbe-41dc-ab5e-3c71ab9823e5)
+
 ***
 ## Conclusion
 Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
