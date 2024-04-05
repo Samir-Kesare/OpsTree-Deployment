@@ -56,34 +56,35 @@ Create and test a new AMI images with new version of application.
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a48beedf-aeca-45a8-bddc-e68691b836b6)
 ***
+### Step 2: Create a new Target group for version 2
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/299a7c50-f830-4156-b5c0-b5545a0de77c)
+***
 
-### Step 2: Update Launch Template
+### Step 3: Update Launch Template
 Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/733d5647-f7f2-4a8e-b6d0-89e3df18519c)
 ***
 
-### Step 3: Go to ASG and Create a new ASG 
+### Step 4: Go to ASG and Create a new ASG 
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a202f1da-075c-44f3-bff1-fb1554e59530)
-
-### Step 4: Choose launch template
+***
+### Step 5: Choose launch template
 Give name of new ASG then, select launch template >> new version of application
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ac5ccaf0-6d72-449e-a538-514b47d128a0)
 ***
 
-### Step 5: Choose instance launch options 
+### Step 6: Choose instance launch options 
 Choose the VPC network environment that your instances are launched into, and customize the instance types and purchase options.
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/b3ad4ff5-35d1-4f5c-b70d-146d49d0cb3c)
 ***
 
-### Step 6: Start instance refresh
-Review all of your selections to confirm that everything is set up correctly.
-When you are satisfied with your instance refresh selections, choose **Start instance refresh.**
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/c04a1060-f63e-4607-8968-36f2f35c66ba)
+### Step 7: Configure advanced options
+Integrate your Auto Scaling group with other services to distribute network traffic across multiple servers using a load balancer.
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/f6c60c39-f355-47b8-895c-23c5674065d5)
 
 ***
 ## Result
