@@ -32,18 +32,7 @@ The **blue-green deployment** strategy is a technique used in software deploymen
 To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
 ***
 
-## Instance Refresh 
-We will use instance refresh to update the instances in your Auto Scaling group. This feature can be useful when a configuration change requires to replace instances, especially if Auto Scaling group contains a large number of instances.
-
-When the instance refresh has started, Amazon EC2 Auto Scaling will:
-
-- Replace instances in batches based on the minimum and maximum healthy percentages.
-- Launch the new instances first before terminating the old ones if the minimum healthy percentage is set to 100 percent. This ensures that desired capacity is maintained at all times.
-- Check instances for health status and give them time to warm up before more instances are replaced.
-- Terminate and replace instances that are found to be unhealthy.
-- Automatically update the Auto Scaling group settings with the new configuration changes after the instance refresh succeeds.
-
-The following flow diagram illustrates the launch before terminate behavior when you set the minimum healthy percentage to 100 percent.
+## Flow Diagram 
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/1e247890-ade7-4d8b-8536-9504070b26fc)
 ***
@@ -62,10 +51,11 @@ The following flow diagram illustrates the launch before terminate behavior when
 
 ## Steps to Deploy (Rolling Strategy)
 
-### Step 1: Build a new AMI 
+### Step 1: Build a new version AMI 
 Create and test a new AMI images with new version of application.
 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/6db566eb-6d1b-4fb1-b068-674b4af315f4)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a48beedf-aeca-45a8-bddc-e68691b836b6)
+***
 
 ### Step 2: Update Launch Template
 Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
