@@ -94,6 +94,9 @@ Add tags to help you search, filter, and track your Auto Scaling group across AW
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/5be8a1c3-9236-497e-9e9f-5b85e0c2ae91)
 ***
 ### Step 11: Review and create ASG
+On the Review page, choose Create Auto Scaling group.
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/66a627ec-c0af-4117-b13c-5a92318dcd6c)
+***
 ### Step 12: Go to existing ALB 
 Click on rules where v1 of application currently in use
 
