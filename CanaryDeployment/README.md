@@ -1,8 +1,9 @@
-
 #  Canary  Startegy Deployment in Immutable Infrastructure 
 
-![Canary](https://thenewstack.io/deployment-strategies/)
-
+<p align="center">
+   <img src="https://storage.googleapis.com/cdn.thenewstack.io/media/2017/11/a6324354-canary.gif" width="400px">
+</p>
+ 
 | **Author** | **Created On** | **Last Updated** | **Document version** |
 | ---------- | -------------- | ---------------- | -------------------- |
 | **Vishal Kumar Kesharwani** | **05 April 2024** | **05 APril 2024** | **v1** |
@@ -50,108 +51,34 @@ To know more about  Canary  Deployment Strategy, [**click here**](https://github
 
 Canary deployment involves deploying a new version of an application to a separate environment while directing only a small portion of traffic to it initially. This allows for gradual testing and monitoring of the new version's performance. Various strategies, such as distributing requests evenly or selecting beta testers, can determine which traffic accesses the new version first. Continuous monitoring of metrics helps decide whether to increase traffic or rollback. Once validated, all traffic is routed to the new version, and the old environment can be terminated gracefully. This approach reduces the impact of potential failures and promotes confidence in adopting Continuous Deployment practices.
 
-![Canary](https://www.encora.com/hs-fs/hubfs/GIF-canary-deployment.gif?width=720&name=GIF-canary-deployment.gif)
-
+<img src="https://blog.qburst.com/wp-content/uploads/2023/09/Canary-Deployment-Stategy.gif" width="600px">
 
 
 ***
 
 ## Steps to Deploy ( Canary  Strategy)
 
-### Step 1: Build a new version AMI 
-Create and test a new AMI images with new version of application.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a48beedf-aeca-45a8-bddc-e68691b836b6)
-***
-### Step 2: Create a new Target group for version 2
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/299a7c50-f830-4156-b5c0-b5545a0de77c)
-***
-
-### Step 3: Update Launch Template
-Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/733d5647-f7f2-4a8e-b6d0-89e3df18519c)
-***
-
-### Step 4: Go to ASG and Create a new ASG 
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a202f1da-075c-44f3-bff1-fb1554e59530)
-***
-### Step 5: Choose launch template
-Give name of new ASG then, select launch template >> new version of application
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ac5ccaf0-6d72-449e-a538-514b47d128a0)
-***
-
-### Step 6: Choose instance launch options 
-Choose the VPC network environment that your instances are launched into, and customize the instance types and purchase options.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/b3ad4ff5-35d1-4f5c-b70d-146d49d0cb3c)
-***
-
-### Step 7: Configure advanced options
-Integrate your Auto Scaling group with other services to distribute network traffic across multiple servers using a load balancer.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/f6c60c39-f355-47b8-895c-23c5674065d5)
-***
-
-### Step 8: Configure group size and scaling 
-Define your group's desired capacity and scaling limits. You can optionally add automatic scaling to adjust the size of your group.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/53220c16-5dd6-4c84-b7e1-7f9efa179bdf)
-***
-### Step 9: Add notifications (optional) 
-Send notifications to SNS topics whenever Amazon EC2 Auto Scaling launches or terminates the EC2 instances in your Auto Scaling group.
-
-### Step 10: Add tags
-Add tags to help you search, filter, and track your Auto Scaling group across AWS. You can also choose to automatically add these tags to instances when they are launched.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/5be8a1c3-9236-497e-9e9f-5b85e0c2ae91)
-***
-### Step 11: Review and create ASG
-On the Review page, choose Create Auto Scaling group.
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/66a627ec-c0af-4117-b13c-5a92318dcd6c)
-***
-### Step 12: Go to existing ALB 
-Click on rules where v1 of application currently in use
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/afb6cd7a-9b5a-4b92-ae86-cd91dcf44b4c)
-***
-### Step 13: Select and edit the rule where old version of application TG is being used 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/15a2c544-f9ad-4386-8a53-a1400952828d)
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/358d7838-a697-4f0f-92be-1c55fc241529)
+### Step 1:
 
 ***
-### Step 14: Define rule actions 
-Here, select the new version TG
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ff7bc24c-420a-4cd1-a5f6-947bfd2b7ba0)
-***
 
->[!NOTE]
-> You can also add new version TG and route your traffic gradually from old to new version.
- 
-## Result
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/3de48c0e-de56-46cc-b98e-2e7bbbdb66ab)
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/45879e27-8dbe-41dc-ab5e-3c71ab9823e5)
-
-***
 ## Conclusion
-In conclusion, the  Canary  deployment strategy offers significant advantages in terms of minimizing downtime, reducing deployment risks, and enabling continuous delivery of updates. However, it's essential to acknowledge the potential challenges such as increased infrastructure costs, complexity in managing dual environments, and dependency on automated deployment tools. Despite these drawbacks, when implemented effectively,  Canary  deployments can enhance reliability, flexibility, and agility in the software delivery process. By understanding both the benefits and limitations, organizations can leverage the  Canary  strategy to achieve seamless, efficient, and resilient deployment workflows.
+
+Canary deployments offer a controlled and incremental approach to updating applications, reducing risks by testing updates on a small subset of users or servers before full deployment. Despite potential complexities and resource usage, the method provides early feedback, improves reliability, and enables a smoother rollout. By following best practices such as starting small, automating testing, and maintaining clear communication, teams can effectively manage Canary deployments, ensuring successful updates with minimal disruption.
+
 ***
 
 ## Contact Information
 
-|     Name         | Email  |
-| -----------------| ------------------------------------ |
-| Harshit Singh    | harshit.singh.snaatak@mygurukulam.co |
+| **Name** | **Email Address** |
+| -------- | ----------------- |
+| **Vishal Kumar Kesharwani** | vishal.kumar.kesharwani.snaatak@mygurukulam.co |
+
 ***
 
 ## References
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md |
+| Deployment Strategies Reference doc | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md) |
 | Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
-| Blue Green Strategy | https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/bluegreen-deployments.html |
