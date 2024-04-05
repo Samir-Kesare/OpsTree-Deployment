@@ -84,9 +84,25 @@ Choose the VPC network environment that your instances are launched into, and cu
 
 ### Step 7: Configure advanced options
 Integrate your Auto Scaling group with other services to distribute network traffic across multiple servers using a load balancer.
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/f6c60c39-f355-47b8-895c-23c5674065d5)
 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/f6c60c39-f355-47b8-895c-23c5674065d5)
 ***
+
+### Step 8: Configure group size and scaling 
+Define your group's desired capacity and scaling limits. You can optionally add automatic scaling to adjust the size of your group.
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/53220c16-5dd6-4c84-b7e1-7f9efa179bdf)
+***
+### Step 9: Add notifications (optional) 
+Send notifications to SNS topics whenever Amazon EC2 Auto Scaling launches or terminates the EC2 instances in your Auto Scaling group.
+
+### Step 10: Add tags
+Add tags to help you search, filter, and track your Auto Scaling group across AWS. You can also choose to automatically add these tags to instances when they are launched.
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/5be8a1c3-9236-497e-9e9f-5b85e0c2ae91)
+***
+### Step 11: Review and create ASG
+### Step 12: 
 ## Result
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/63083e7c-09d7-40c4-8a9e-87ad3cc2e790)
 
