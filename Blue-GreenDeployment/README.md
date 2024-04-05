@@ -1,4 +1,4 @@
-# Rolling Startegy Deployment in Immutable Infrastructure 
+# Blue/Green Startegy Deployment in Immutable Infrastructure 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ef9efec4-0688-4803-84b6-676aeb4e69db)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
@@ -9,10 +9,9 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Instance Refresh](#Instance-Refresh)
 + [Pre-requisites](#Pre-requisites)
-+ [How it Works?](#How-it-Works)
-+ [Steps to Deploy](#steps-to-deploy-rolling-strategy)
++ [Flow Diagram](#flow-diagram)
++ [Steps to Deploy](#steps-to-deploy-bluegreen-strategy)
 + [Result](#result)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
@@ -31,12 +30,6 @@ The **blue-green deployment** strategy is a technique used in software deploymen
 
 To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
 ***
-
-## Flow Diagram 
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/1e247890-ade7-4d8b-8536-9504070b26fc)
-***
-
 ## Pre-requisites
 | Service    | Description |
 | ---------- | ----------- |
@@ -44,12 +37,12 @@ To know more about Blue-Green Deployment Strategy, [**click here**](https://gith
 | AWS Enviroment | existing AWS Enviroment where deployment needs to be performed |
 ***
 
-## How it Works?
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/8279813b-4f6b-4cdd-9eef-7ffe60dee5a6)
+## Flow Diagram 
 
 ***
 
-## Steps to Deploy (Rolling Strategy)
+
+## Steps to Deploy (Blue/Green Strategy)
 
 ### Step 1: Build a new version AMI 
 Create and test a new AMI images with new version of application.
@@ -127,7 +120,7 @@ Here, select the new version TG
 
 ***
 ## Conclusion
-Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
+In conclusion, the blue-green deployment strategy offers significant advantages in terms of minimizing downtime, reducing deployment risks, and enabling continuous delivery of updates. However, it's essential to acknowledge the potential challenges such as increased infrastructure costs, complexity in managing dual environments, and dependency on automated deployment tools. Despite these drawbacks, when implemented effectively, blue-green deployments can enhance reliability, flexibility, and agility in the software delivery process. By understanding both the benefits and limitations, organizations can leverage the blue-green strategy to achieve seamless, efficient, and resilient deployment workflows.
 ***
 
 ## Contact Information
@@ -139,9 +132,8 @@ Rolling out immutable infrastructure using a rolling deployment strategy offers 
 
 ## References
 
-| Description                                   | References  |
+| Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Rollout Immutable Infrastructure using Rolling Startegy | [Reference link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/Rollout/rollingStrategy/README.md) |
-| Deployment Strategies Reference doc | [Reference link](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling) |
-| Immutable Infrastructure Reference doc | [Reference link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md) |
-| How to Rollout | [Reference link](https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a) |
+| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md |
+| Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
+| Blue Green Strategy | https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/bluegreen-deployments.html |
