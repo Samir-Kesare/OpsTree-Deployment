@@ -60,11 +60,12 @@ Create and test a new AMI images with new version of application.
 ### Step 2: Update Launch Template
 Create a new AMI and new version of Launch Template that needs to be deployed with all requirements.
 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/e633e9d5-1639-41d2-bfe9-6989b4348d84)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/733d5647-f7f2-4a8e-b6d0-89e3df18519c)
+***
 
-### Step 3: Go to ASG(here it is Frontend-ASG) and Start Instance Refresh 
+### Step 3: Go to ASG and Create a new ASG 
 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/4d7e1fa5-00c5-49ab-8d0c-c6da488e14b8)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a202f1da-075c-44f3-bff1-fb1554e59530)
 
 ### Step 4: For Availability settings, do the following:
 
