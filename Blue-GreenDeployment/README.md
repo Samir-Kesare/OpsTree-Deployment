@@ -67,30 +67,17 @@ Create a new AMI and new version of Launch Template that needs to be deployed wi
 
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/a202f1da-075c-44f3-bff1-fb1554e59530)
 
-### Step 4: For Availability settings, do the following:
+### Step 4: Choose launch template
+Give name of new ASG then, select launch template >> new version of application
 
-A. Choose one of the following instance replacement methods:
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ac5ccaf0-6d72-449e-a538-514b47d128a0)
+***
 
-  1. **Launch before terminating:** A new instance must be provisioned first before an existing instance can be terminated. This is a good choice for applications that favor availability over cost savings.
-  2. **Terminate and launch:** New instances are provisioned at the same time your existing instances are terminated. This is a good choice for applications that favor cost savings over availability. It's also a good choice for applications that should not launch more capacity than is currently available.
-  3. **Custom behavior:** This option lets you set up a custom minimum and maximum range for the amount of capacity that you want available when replacing instances. This can help you achieve the right balance between cost and availability.
+### Step 5: Choose instance launch options 
+Choose the VPC network environment that your instances are launched into, and customize the instance types and purchase options.
 
-B. For **Set healthy percentage**, enter values for one or both of the following fields. The enable fields vary depending on the option you choose for **Instance replacement method**.
-
-  1. **Min:** Sets the minimum healthy percentage that's required to proceed with the instance refresh.
-  2. **Max:** Sets the maximum healthy percentage that's possible during the instance refresh. 
-
-c. For **Instance warmup**, enter the number of seconds from when a new instance's state changes to `InService` to when it finishes initializing. Amazon EC2 Auto Scaling waits this amount of time before moving on to replace the next instance.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/8ecdaa43-a258-406c-8be6-d6d7c14f9417)
-
-### Step 5: Desired configuration
-Expand the **Desired configuration** section to specify updates that you want to make to your Auto Scaling group.
-
-- For **Update launch template**:
-If you created a new launch template or a new launch template version, select this check box. When you select this option, Amazon EC2 Auto Scaling shows you the current launch template and current launch template version. It also lists any other available versions. Choose the launch template and then choose the version.
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ce70956d-1a99-4904-8959-cd7190cf040d)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/b3ad4ff5-35d1-4f5c-b70d-146d49d0cb3c)
+***
 
 ### Step 6: Start instance refresh
 Review all of your selections to confirm that everything is set up correctly.
