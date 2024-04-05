@@ -102,17 +102,27 @@ Add tags to help you search, filter, and track your Auto Scaling group across AW
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/5be8a1c3-9236-497e-9e9f-5b85e0c2ae91)
 ***
 ### Step 11: Review and create ASG
-### Step 12: 
+### Step 12: Go to existing ALB 
+Click on rules where v1 of application currently in use
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/afb6cd7a-9b5a-4b92-ae86-cd91dcf44b4c)
+***
+### Step 13: Select and edit the rule where old version of application TG is being used 
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/15a2c544-f9ad-4386-8a53-a1400952828d)
+
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/358d7838-a697-4f0f-92be-1c55fc241529)
+
+***
+### Step 14: Define rule actions 
+Here, select the new version TG
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ff7bc24c-420a-4cd1-a5f6-947bfd2b7ba0)
+***
+>[!NOTE]
+> You can also add new version TG and route your traffic gradually from old to new version.
+ 
 ## Result
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/63083e7c-09d7-40c4-8a9e-87ad3cc2e790)
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/3de48c0e-de56-46cc-b98e-2e7bbbdb66ab)
 
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/0029db10-c5df-4335-b881-cd17318b3f4d)
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/2feba7a4-9093-4416-96e7-830fc8a896db)
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/3f00c546-8109-4ad0-a3f6-b50f2e460d07)
-
-![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/73370356-c20d-45bd-a40a-30400e53e420)
 ***
 ## Conclusion
 Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
