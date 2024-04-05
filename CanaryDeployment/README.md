@@ -81,4 +81,4 @@ Canary deployments offer a controlled and incremental approach to updating appli
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
 | Deployment Strategies Reference doc | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md) |
-| Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
+| Immutable Infrastructure Reference doc | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md) |
