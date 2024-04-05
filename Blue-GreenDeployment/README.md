@@ -38,9 +38,8 @@ To know more about Blue-Green Deployment Strategy, [**click here**](https://gith
 ***
 
 ## Flow Diagram 
-
+![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/06b44ea1-029d-475c-b24a-2535ba14d2bd)
 ***
-
 
 ## Steps to Deploy (Blue/Green Strategy)
 
@@ -110,6 +109,7 @@ Click on rules where v1 of application currently in use
 Here, select the new version TG
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/ff7bc24c-420a-4cd1-a5f6-947bfd2b7ba0)
 ***
+
 >[!NOTE]
 > You can also add new version TG and route your traffic gradually from old to new version.
  
