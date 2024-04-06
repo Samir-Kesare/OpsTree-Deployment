@@ -7,7 +7,7 @@ source                         = "git@github.com:CodeOps-Hub/Terraform-modules.g
 }
 
 dependency "network" {
-  config_path = "/home/harshit/Deployment/root/dev/network/"
+  config_path = "../network/"
   
 }
 
