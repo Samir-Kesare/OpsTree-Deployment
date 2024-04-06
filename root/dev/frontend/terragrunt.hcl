@@ -7,11 +7,11 @@ source = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling
 }
 
 dependency "network" {
-  config_path = "/home/harshit/Deployment/root/dev/network/"
+  config_path = "../network/"
 }
 
 dependency "openvpn" {
-  config_path = "/home/harshit/Deployment/root/dev/openvpn/"
+  config_path = "../openvpn/"
 }
 
 locals {
