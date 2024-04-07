@@ -16,7 +16,7 @@ private_key_rsa_bits                = 4096
 template_name                       = "Dev-Frontend-template"
 template_description                = "Template for Dev-Frontend"
 AMI_ID                              = "ami-0204477864cc2aff9" // frontend api server AMI ID v1--> ami-09f4367f25b54bb85 v2--> 	ami-0204477864cc2aff9
-instance_type                       = "t2.medium"
+instance_type                       = "t2.micro"
 instance_keypair                    = "frontend.pem"
 # subnet_ID                           = var.Dev_Frontend_subnet_ID
 user_data_script_path               = "./script.sh"
@@ -44,7 +44,7 @@ priority                             = 100
 #--------------------------Configure Auto Scaling group ---------------------------#
 
 autoscaling_group_name              = "Dev-Frontend_ASG"
-ASG_version                         = "$Latest" // "$Latest" change this accrd.
+ASG_version                         = "2" // "$Latest" change this accrd.
 # subnet_ids                          = var.Dev_Frontend_subnet_ids
 tag_key                             = "Name"
 tag_value                           = "Dev-Frontend_ASG"
