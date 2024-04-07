@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-source = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"
+source = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=harshit/rolling-module"
 }
 
 dependency "network" {
@@ -14,6 +14,11 @@ dependency "openvpn" {
   config_path = "../openvpn/"
 }
 
+dependency "targetGroup" {
+  config_path = "../rollingTG/"
+}
+
+
 locals {
   inputs_from_tfvars = jsondecode(read_tfvars_file("frontend.tfvars"))
 }
@@ -21,6 +26,7 @@ locals {
 inputs = merge(
   local.inputs_from_tfvars,
   {
+    target_group_arn =  dependency.targetGroup.outputs.target_group_id[0]
     SG_vpc_id = dependency.network.outputs.vpc-id
     subnet_ID = dependency.network.outputs.private-subnets-id[0]
     listener_arn = dependency.network.outputs.alb-listener-arn
