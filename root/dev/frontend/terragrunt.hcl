@@ -14,11 +14,6 @@ dependency "openvpn" {
   config_path = "../openvpn/"
 }
 
-dependency "targetGroup" {
-  config_path = "../rollingTG/"
-}
-
-
 locals {
   inputs_from_tfvars = jsondecode(read_tfvars_file("frontend.tfvars"))
 }
