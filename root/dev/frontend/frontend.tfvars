@@ -8,7 +8,7 @@ outbound_ports                      = [{ port= 0, protocol = "-1", cidr_blocks =
 Sg_tags                             = {
     Name                                  = "Dev-Frontend-sg"
     Enviroment                            = "Dev_Frontend"
-    Owner                                 = "Vishal"
+    Owner                                 = "Harshit"
     }
 #--------------------------------Launch Template ----------------------------------
 private_key_algorithm               = "RSA"
