@@ -21,7 +21,6 @@ locals {
 inputs = merge(
   local.inputs_from_tfvars,
   {
-    target_group_arn =  dependency.targetGroup.outputs.target_group_arn[0]
     SG_vpc_id = dependency.network.outputs.vpc-id
     subnet_ID = dependency.network.outputs.private-subnets-id[0]
     listener_arn = dependency.network.outputs.alb-listener-arn
