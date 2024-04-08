@@ -114,7 +114,7 @@ Here, select the new version TG
 ***
 
 >[!NOTE]
-> You can also add new version TG and route your traffic gradually from old to new version.
+> You should add new version TG and route your traffic gradually from old to new version.
  
 ## Result
 ![image](https://github.com/CodeOps-Hub/Deployment/assets/156056444/3de48c0e-de56-46cc-b98e-2e7bbbdb66ab)
