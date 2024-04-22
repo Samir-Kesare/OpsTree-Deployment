@@ -5,11 +5,11 @@ remote_state {
     if_exists = "overwrite"
   }
   config = {
-    bucket         = "hokage-terragrunt-tfstate"
+    bucket         = "hokage-terragrunt-tfstate-001"
     key            = "${path_relative_to_include()}/terraform.tfstate"
     region         = "us-east-2"
     encrypt        = true
-    dynamodb_table = "hokage-lock-table"
+    // dynamodb_table = "hokage-lock-table"
   }
 }
 
@@ -32,3 +32,4 @@ provider "aws" {
 } 
 EOF
 }
+
